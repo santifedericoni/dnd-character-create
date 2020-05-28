@@ -12,6 +12,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  Link
+} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,11 +67,15 @@ export default function ButtonAppBar() {
                 <Typography variant="h6" className={classes.title}>
                   DnD Character Creator
                 </Typography>
-                <Button href="/signup" color="inherit">
+                <Button color="inherit">
+                  <Link to ="/signup">
                   Sign Up
+                  </Link>
                 </Button>
-                <Button href="/login" color="inherit">
+                <Button color="inherit">
+                  <Link to ="/login">
                   Login
+                  </Link>
                 </Button>
               </Toolbar>
             </AppBar>
@@ -102,9 +113,9 @@ export default function ButtonAppBar() {
                   </IconButton>
                 </Hidden>
                 <Hidden mdDown>
+                  <Link to = "/createCharacter">
                   <IconButton
                     size="small"
-                    href="/createCharacter"
                     edge="start"
                     className={classes.menuButton}
                     color="inherit"
@@ -112,11 +123,12 @@ export default function ButtonAppBar() {
                   >
                     New Character
                   </IconButton>
+                  </Link>
                 </Hidden>
                 <Hidden mdDown>
+                  <Link to ="/ShowCharacterByUser">
                   <IconButton
                     size="small"
-                    href="/ShowCharacterByUser"
                     edge="start"
                     className={classes.menuButton}
                     color="inherit"
@@ -124,6 +136,7 @@ export default function ButtonAppBar() {
                   >
                     Show My Characters
                   </IconButton>
+                  </Link>
                 </Hidden>
                 <Typography variant="h6" className={classes.title}>
                   <Box align="center">DnD&nbsp;Character&nbsp;Creation</Box>
