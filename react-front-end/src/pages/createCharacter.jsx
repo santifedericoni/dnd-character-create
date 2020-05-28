@@ -28,7 +28,7 @@ export default function CharacterNew(props) {
   });
   let i = 0;
   const [stats, setStats] = useState(
-    [15, 14, 13, 12, 10, 8, ''].map((stat) => ({ value: i++, label: stat }))
+    [15, 14, 13, 12, 10, 8, 'clean'].map((stat) => ({ value: i++, label: stat }))
   );
   const [alignments, setAlignments] = useState([
     { id: 1, name: 'Lawful good' },

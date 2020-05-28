@@ -41,13 +41,23 @@ const selectStats = (props) => {
     }  
 
   const updateStrength = (val) => {
+      console.log('val',val)
+      console.log('stats',props.stats[val])
+      console.log('stats2',props.stats.length)
+
     props.setCharacterState( {        
         ...props.characterState, 
         strength: props.stats[val].label 
     })
     if (val === 6 ){
-        //here i should be add again the element i delete before
-        //  props.stats[val+1].label = props.characterState.charisma 
+        props.stats.push({
+            value: props.stats.length,
+            label:props.characterState.strength
+        })
+        props.setCharacterState( {        
+            ...props.characterState, 
+            strength: 10 
+        })
     }
     else {
         delete props.stats[val];
@@ -59,8 +69,14 @@ const selectStats = (props) => {
             dexterity: props.stats[val].label 
         })
         if (val === 6 ){
-            //here i should be add again the element i delete before
-            //  props.stats[val+1].label = props.characterState.charisma 
+            props.stats.push({
+                value: props.stats.length,
+                label:props.characterState.dexterity
+            })
+            props.setCharacterState( {        
+                ...props.characterState, 
+                dexterity: 10 
+            })
         }
         else {
             delete props.stats[val];
@@ -72,8 +88,14 @@ const selectStats = (props) => {
         constitution: props.stats[val].label 
     })
     if (val === 6 ){
-        //here i should be add again the element i delete before
-        //  props.stats[val+1].label = props.characterState.charisma 
+        props.stats.push({
+            value: props.stats.length,
+            label:props.characterState.constitution
+        })
+        props.setCharacterState( {        
+            ...props.characterState, 
+            constitution: 10 
+        }) 
     }
     else {
         delete props.stats[val];
@@ -84,7 +106,19 @@ const selectStats = (props) => {
             ...props.characterState, 
             intelligence: props.stats[val].label 
         })
-        delete props.stats[val];
+        if (val === 6 ){
+            props.stats.push({
+                value: props.stats.length,
+                label:props.characterState.intelligence
+            })
+            props.setCharacterState( {        
+                ...props.characterState, 
+                intelligence: 10 
+            }) 
+        }
+        else {
+            delete props.stats[val];
+        }
 
     }
     const updateWisdom = (val) => {
@@ -93,8 +127,14 @@ const selectStats = (props) => {
             wisdom: props.stats[val].label 
         })
         if (val === 6 ){
-            //here i should be add again the element i delete before
-            //  props.stats[val+1].label = props.characterState.charisma 
+            props.stats.push({
+                value: props.stats.length,
+                label:props.characterState.wisdom
+            })
+            props.setCharacterState( {        
+                ...props.characterState, 
+                wisdom: 10 
+            }) 
         }
         else {
             delete props.stats[val];
@@ -107,8 +147,14 @@ const selectStats = (props) => {
         })
 
         if (val === 6 ){
-            //here i should be add again the element i delete before
-            //  props.stats[val+1].label = props.characterState.charisma 
+            props.stats.push({
+                value: props.stats.length,
+                label:props.characterState.charisma
+            })
+            props.setCharacterState( {        
+                ...props.characterState, 
+                charisma: 10 
+            }) 
         }
         else {
             delete props.stats[val];
