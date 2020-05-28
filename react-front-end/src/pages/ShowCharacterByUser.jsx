@@ -19,14 +19,13 @@ const ShowCharacterByUser = (props) => {
       .then((response) => {
         setCharacterState({
           ...characterState,
-          ...response.data.characters
+          ...[response.data.characters],
         });
       })
     }
     useEffect(() => {
       getCharacterById();
     }, []);
-
   return (
     <div className="App">
         <Container>
