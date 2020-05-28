@@ -79,7 +79,7 @@ export default function SignIn(props) {
         localStorage.setItem('login', true);
         localStorage.setItem('userName', res.data.user[0].nick_name);
         localStorage.setItem('userId', res.data.user[0].id);
-        window.location = `/ShowCharacterByUser/`; //${res.data.user[0].id}`;
+        window.location = `/ShowCharacterByUser/`;
       } else {
         alert('invalid data');
       }

@@ -7,7 +7,13 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  Link
+} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +61,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[0].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[0].id}>
                 Full View
               </Link>{' '}
             </Typography>
@@ -90,7 +96,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[1].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[1].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -125,7 +131,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[2].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[2].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -160,7 +166,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[3].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[3].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -195,7 +201,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[4].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[4].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -235,7 +241,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[0].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[0].id}>
                 Full View
               </Link>{' '}
             </Typography>
@@ -270,7 +276,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[1].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[1].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -305,7 +311,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[2].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[2].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -340,7 +346,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[3].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[3].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -380,7 +386,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[0].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[0].id}>
                 Full View
               </Link>{' '}
             </Typography>
@@ -415,7 +421,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[1].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[1].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -450,7 +456,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[2].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[2].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -490,7 +496,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[0].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[0].id}>
                 Full View
               </Link>{' '}
             </Typography>
@@ -525,7 +531,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[1].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[1].id}>
                 Full View
               </Link>{' '}
       </Typography>
@@ -565,7 +571,7 @@ export default function SimpleExpansionPanel(props) {
             </Grid>
             <Grid item xs={3}>
             <Typography variant="body2" color="textSecondary" align="center">
-              <Link color="inherit" href={'/character/' + props.characterState[0].id}>
+              <Link color="inherit" to={'/character/' + props.characterState[0].id}>
                 Full View
               </Link>{' '}
             </Typography>
