@@ -9,7 +9,7 @@ module.exports = (db) => {
     JOIN classes ON classes.id = class_id
     JOIN races ON races.id = race_id
     JOIN backgrounds ON backgrounds.id = background_id
-    WHERE characters.user_id = ${req.params.id};
+    WHERE characters.user_id = ${req.params.id} and active = true;
     `;
     db.query(query)
       .then(data => {
@@ -224,21 +224,32 @@ module.exports = (db) => {
   })
 
   router.post("/notes", (req, res) => {
-    console.log('aca')
     const values = [req.body.props.characterObject.notes, req.body.props.characterObject.id];
 
-    let characterQuery = `INSERT INTO characters
-    (user_id, class_id, race_id, background_id, experience, level, alignment, speed, armour_class, total_hit_points, temporary_hit_points, initiative, strength, dexterity, constitution, intelligence, wisdom, charisma, name, avatar_url, hit_die)
-    VALUES
-    ($1, $2, $3, $4, $5, $6, $7 ,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19, $20, $21) RETURNING id;`
-
-  const query = `UPDATE characters
-  SET notes = $1
-  WHERE id= $2;`
-    console.log('antes de la query')
+    const query = `UPDATE characters
+    SET notes = $1
+    WHERE id= $2;`
     db.query(query, values)
     .then((result) => {
-      console.log('exito')
+
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  })
+
+
+  router.post("/delete", (req, res) => {
+    const values = [req.body.val];
+    console.log('here',req.body.val)
+    const query = `UPDATE characters
+    SET active = false
+    WHERE id= $1;`
+    db.query(query, values)
+    .then((result) => {
+
     })
     .catch(err => {
       res

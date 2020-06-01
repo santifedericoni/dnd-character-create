@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
@@ -31,6 +32,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleExpansionPanel(props) {
   const classes = useStyles();
+  const deleteCharacter = (val) => {
+
+    axios.post(`/api/character/delete`, { val })
+    .then((res) => {
+  });
+  window.location = `/ShowCharacterByUser`
+  }
+
   if (props.characterState[0]){
     return (
       <div className={classes.root}>
@@ -65,6 +74,11 @@ export default function SimpleExpansionPanel(props) {
               <Link color="inherit" to={'/character/' + row.id}>
                 Full View
               </Link>{' '}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" align="center">
+              <Button onClick ={(event) => deleteCharacter(row.id)}>
+                Delete
+              </Button>
             </Typography>
               </Grid>
           </ExpansionPanelDetails>
