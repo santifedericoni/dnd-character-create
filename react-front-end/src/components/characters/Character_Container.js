@@ -81,7 +81,7 @@ export default function CharacterContainer(props) {
               <CharacterInventory characterObject={characterData} />
             </Route>
             <Route path="/details-notes">
-              <CharacterDetailsNotes characterObject={characterData} />
+              <CharacterDetailsNotes characterObject={characterData} setCharacterState={setCharacterData} />
             </Route>
           </Switch>
         </div>
