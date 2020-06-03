@@ -13,10 +13,10 @@ import CharacterDetailsNotes from './overview/Character_DetailsNotes';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#3f51b5',
+      main: '#660000',
     },
     secondary: {
-      main: '#7986cb',
+      main: '#660000',
     },
   },
 });

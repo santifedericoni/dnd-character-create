@@ -17,10 +17,10 @@ import CombatContainer from './overview/Combat_Container';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#3f51b5',
+      main: '#660000',
     },
     secondary: {
-      main: '#7986cb',
+      main: '#660000',
     },
   },
 });

@@ -8,12 +8,12 @@
   margin-left: 5vw;
   list-style-type: none;
   border-radius: 10px;
-  background-color: #5c6bc0;
-  box-shadow: 10px 5px 5px #3f51b5;
+  background-color: #660000;
+  box-shadow: 10px 5px 5px #830202;
 }
 
 .character-nav:hover {
-  background-color: #3f51b5;
+  background-color: #830202;
   filter: none;
 }
 /* NAV - Overview - Combat */
@@ -26,12 +26,12 @@
   margin-left: 15vw;
   list-style-type: none;
   border-radius: 10px;
-  background-color: #5c6bc0;
-  box-shadow: 10px 5px 5px #3f51b5;
+  background-color: #660000;
+  box-shadow: 10px 5px 5px #830202;
 }
 
 .character-nav2:hover {
-  background-color: #3f51b5;
+  background-color: #830202;
   filter: none;
 }
 
@@ -45,17 +45,17 @@
   margin-left: 23.5vw;
   list-style-type: none;
   border-radius: 10px;
-  background-color: #5c6bc0;
-  box-shadow: 10px 5px 5px #3f51b5;
+  background-color: #660000;
+  box-shadow: 10px 5px 5px #830202;
 }
 
 .character-nav3:hover {
-  background-color: #3f51b5;
+  background-color: #830202;
   filter: none;
 }
 
 button {
-  background-color: #5c6bc0;
+  background-color: #660000;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -66,7 +66,7 @@ button {
 }
 
 button:focus {
-  background-color: #3f51b5;
+  background-color: #830202;
 }
 
 .quickview-container {
