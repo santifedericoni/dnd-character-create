@@ -1,6 +1,8 @@
+# What is DnD Character Create 
+is a simple way for people who never play the game to get a character and a simple way to start playing
 
-
-# React + Express 
+# Stack
+## React + Express 
 
 ## Running the projects
 
